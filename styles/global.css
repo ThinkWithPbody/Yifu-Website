@@ -1,6 +1,6 @@
 @font-face {
     font-family: OpenDyslexicMono;
-    src: url("/assets/fonts/OpenDyslexic2/OpenDyslexic-BoldItalic.otf");
+    src: url("/assets/fonts/OpenDyslexic2/OpenDyslexicMono-Regular.otf");
 }
 
 @font-face {
@@ -57,8 +57,15 @@
     --header-value-4a: calc(var(--main-value-4) + 10%);
     --header-value-4s: calc(var(--main-value-4) - 10%);
 
-    --color-text-black: hsl(var(--main-hue), 0%, 0%);
-    --color-text-main: hsl(var(--main-hue), 50%, 60%);
+    --color-contrast: hsl(var(--main-hue), 0%, 0%);
+    --color-main: hsl(var(--main-hue), 50%, 60%);
+    --color-off: hsl(var(--main-hue), 100%, 30%);
+
+    --color-bg-contrast: hsl(var(--main-hue), 0%, 100%);
+    --color-bg-main: hsl(var(--main-hue), 20%, 80%);
+    --color-bg-off: hsl(var(--main-hue), 0%, 90%);
+
+    --border-main: 1px solid var(--color-main);
 
 
     --width-max: 1000px;
@@ -68,9 +75,15 @@
 * {
     margin: 0;
     padding: 0;
+
+
+    color: inherit;
+    background-color: inherit;
+    
     border: 1px solid black;
-    border-radius: 10px;
-    background-color: hsla(50 50% 50% 0.5);
+    /* border: inherit; */
+    /* border-radius: inherit; */
+
     box-sizing: inherit;
     transition-duration: inherit;
 }
@@ -79,57 +92,79 @@ html {
     overflow-y: scroll;
     height: 100%;
     box-sizing: border-box;
-    font-size: large;
     font-family: FiraCode, OpenDyslexicMono, OpenDyslexic, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
+
+    
+    background-color: cyan;
+    /* background-color: none; */
+    /* background-color: var(--color-bg-contrast); */
+    color: magenta;
+    /* color: var(--color-contrast); */
+
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
 }
 
 body {
     height: 100%;
+    /* position: relative; */
 }
 
-div {}
+main {
+    background-color: var(--color-bg-off);
+}
+
+div {
+}
+
+p, table, label, button, input {
+    margin: 10px 0px;
+    /* background-color: var(--color-bg-contrast); */
+    color: var(--color-contrast);
+    border: var(--border-main);
+    /* border-radius: 10px; */
+}
 
 h1 {
-    color: var(--color-text-black);
+    color: var(--color-contrast);
     font-size: 200%;
-    text-shadow: 1px 1px 0px var(--color-text-main), 2px 2px 0px var(--color-text-black);
+    text-shadow: 1px 1px 0px var(--color-main), 2px 2px 0px var(--color-contrast);
     margin: 20px 0px 15px;
 }
 
 h2 {
-    color: var(--color-text-main);
+    color: var(--color-main);
     font-size: 200%;
-    text-shadow: 2px 2px 0px var(--color-text-black);
+    text-shadow: 2px 2px 0px var(--color-contrast);
     margin: 20px 0px 15px;
 }
 
 h3 {
-    color: var(--color-text-black);
+    color: var(--color-contrast);
     font-size: 150%;
     margin: 15px 0px 10px;
 }
 
 h4 {
-    color: var(--color-text-main);
+    color: var(--color-main);
     font-size: 150%;
     margin: 15px 0px 10px;
 }
 
 h5 {
-    color: var(--color-text-black);
+    color: var(--color-contrast);
     font-size: 100%;
     margin: 15px 0px 10px;
 }
 
 h6 {
-    color: var(--color-text-main);
+    color: var(--color-main);
     font-size: 100%;
     margin: 15px 0px 10px;
 }
 
 p {
-    color: hsl(var(--main-hue), var(--main-saturation-0), var(--main-value-0));
     font-size: 100%;
     margin: 10px 0px;
 }
@@ -167,10 +202,19 @@ ul ul ul {
     margin-left: 20px;
 }
 
+table {
+}
+
+td {    
+    text-align: center;
+}
+
+label {
+}
+
 button {
-    background-color: white;
-    color: hsl(var(--main-hue), var(--main-saturation-2), var(--main-value-1));
-    border: 1px solid hsl(var(--main-hue), var(--main-saturation-2), var(--main-value-1));
+    /* color: hsl(var(--main-hue), var(--main-saturation-2), var(--main-value-1)); */
+    /* border: 1px solid hsl(var(--main-hue), var(--main-saturation-2), var(--main-value-1)); */
     padding: 8px 16px;
     text-align: center;
     text-decoration: none;
@@ -180,6 +224,17 @@ button {
 
 button:hover {
     background-color: hsl(var(--main-hue), var(--main-saturation-2), var(--main-value-4));
+}
+
+input[type=text], input[type=submit], select {
+    display: inline-block; 
+    width: 100%;
+    padding: 10px, 20px;
+    margin: 10px 10px 0px 0px;
+}
+
+input[type=submit] {
+  cursor: pointer;
 }
 
 a.button {
@@ -220,7 +275,7 @@ nav {
     max-width: var(--width-max);
 }
 
-nav p,
+nav,
 nav a {
     color: hsl(var(--header-hue), var(--header-saturation), var(--header-value-1));
     text-decoration: none;
@@ -240,12 +295,17 @@ nav a {
 }
 
 .dropdown-header a,
-.dropdown-header p {
+.dropdown-header {
     margin: 0;
     position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    
+    color: hsl(var(--header-hue), var(--header-saturation), var(--header-value-1));
+    text-decoration: none;
+    font-size: 100%;
+    font-weight: normal;
 }
 
 .dropdown-header:hover {

@@ -44,6 +44,16 @@ function loadGlobal() {
     favicon.rel = "icon";
     favicon.href = "/assets/icons/favicon/favicon.ico";
 
+    // Blueprint CSS
+    let blueprint = document.createElement("link");
+    blueprint.onload = function () {
+        if (printLog == true) {
+            console.log("Loaded Blueprint CSS")
+        }
+    };
+    blueprint.rel = "stylesheet";
+    blueprint.href = "/styles/blueprint.min.css";
+
     // Fontawesome
     let fontawesome = document.createElement("link");
     fontawesome.onload = function () {
@@ -68,6 +78,7 @@ function loadGlobal() {
     document.head.appendChild(header);
     document.head.appendChild(footer);
     document.head.appendChild(favicon);
+    document.head.appendChild(blueprint);
     document.head.appendChild(fontawesome);
     // document.head.appendChild(pixijs);
 }

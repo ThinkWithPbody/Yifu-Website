@@ -14,7 +14,7 @@ class LoadHeader extends HTMLElement {
 				</div>
 
 				<div class="dropdown-header f0 fs2" id="dropdown1">
-					<p>Works</p>
+					Works
                     <div class="dropdown-content" id="content1">
                         <a href="">Design</a>
                         <a href="">Other</a>
@@ -22,15 +22,16 @@ class LoadHeader extends HTMLElement {
 				</div>
 
 				<div class="dropdown-header f0 fs2" id="dropdown2">
-					<p>Guides</p>
+					Tools
                     <div class="dropdown-content" id="content2">
                         <a href="">Depth Map Displacement</a>
                         <a href="">BibWord</a>
+                        <a href="">Apoapsis Calculator</a>
                     </div>
 				</div>
 
 				<div class="dropdown-header f0 fs2" id="dropdown3">
-					<p>About</p>
+					About
                     <div class="dropdown-content" id="content3">
                         <a href="">Contact</a>
                     </div>
