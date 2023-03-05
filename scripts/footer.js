@@ -1,3 +1,5 @@
+{/* <load-footer></load-footer> */}
+
 class LoadFooter extends HTMLElement {
     constructor() {
         super();
