@@ -25,7 +25,7 @@ import {
 
             let canvasSize = [0, 0, imageSize[0] / imageSize[1]];
             function updateCanvasSize() {
-                canvasSize[0] = Math.min(container.offsetWidth, imageSize[1] / 2);
+                canvasSize[0] = Math.min(container.offsetWidth, imageSize[0]);
                 canvasSize[1] = canvasSize[0] / canvasSize[2];
             };
             updateCanvasSize();
@@ -45,7 +45,7 @@ import {
             container.innerHTML = "";
 
             // app.view.id = "image-displace-" + i + "-canvas"
-            app.view.style = "box-shadow: 0px 0px 10px 5px var(--color-bg-contrast);"
+            // app.view.style = "box-shadow: 0px 0px 10px 5px var(--color-bg-contrast);"
             container.style = "text-align: center;"
             container.appendChild(app.view);
 

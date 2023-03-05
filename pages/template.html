@@ -11,13 +11,12 @@
 <body>
     <load-header></load-header>
     <main>
-
-        <div>
-            <h1>Title</h1>
-            <h3>Subtitle</h3>
-        </div>
-
         <div bp="grid padding-left--lg padding-right--lg">
+
+            <div bp="12">
+                <h1>Title</h1>
+                <h3>Subtitle</h3>
+            </div>
 
             <div bp="3@lg">
 
@@ -77,6 +76,7 @@
 
                 <label for="input-select-1">Select 1</label>
                 <select id="input-select-1" name="select">
+                    <option value="">Select option</option>
                     <option value="option-1">Option 1</option>
                     <option value="option-2">Option 2</option>
                     <option value="option-3">Option 3</option>
@@ -88,7 +88,8 @@
                 <label for="input-radio-2">Radio 2</label><br>
 
                 <label for="input-text-1">Text 1</label>
-                <input id="input-text-1" style="width: 100%" type="text" value="" name="text" placeholder="Enter Number" step="">
+                <input id="input-text-1" style="width: 100%" type="text" value="" name="text" placeholder="Enter Number"
+                    step="">
                 <input id="input-submit-2" type="submit" value="Submit">
 
                 <table>
@@ -129,11 +130,6 @@
                         </td>
                     </tr>
                 </table>
-
-                <div class="image-displace">
-                    /assets/images/test.png</div>
-                <div class="image-displace">
-                    /assets/images/1-Compo-001_0001.png</div>
             </div>
 
             <div bp="3@lg">
@@ -153,9 +149,11 @@
 
                 <h4>Variables</h4>
                 <div style="background-color: var(--color-contrast);">--color-contrast</div>
+                <div style="background-color: var(--color-dark);">--color-dark</div>
                 <div style="background-color: var(--color-main);">--color-main</div>
                 <div style="background-color: var(--color-off);">--color-off</div>
                 <div style="background-color: var(--color-bg-contrast);">--color-bg-contrast</div>
+                <div style="background-color: var(--color-bg-dark);">--color-bg-dark</div>
                 <div style="background-color: var(--color-bg-main);">--color-bg-main</div>
                 <div style="background-color: var(--color-bg-off);">--color-bg-off</div>
 
@@ -168,8 +166,16 @@
                 <h6>h6</h6>
 
             </div>
-        </div>
 
+            <div bp="12">
+                <div bp="grid">
+                    <div bp="10@lg offset-2@lg" class="image-displace">
+                        /assets/images/test.png</div>
+                    <div bp="10@lg offset-2@lg" class="image-displace">
+                        /assets/images/1-Compo-001_0001.png</div>
+                </div>
+            </div>
+        </div>
     </main>
     <load-footer></load-footer>
 
