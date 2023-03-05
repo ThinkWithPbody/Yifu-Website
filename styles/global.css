@@ -317,7 +317,6 @@ div {
     flex-basis: 100%;
 } */
 
-
 .image-display-container {
     /* padding: 10px 0px; */
     display: flex;
@@ -374,7 +373,7 @@ div {
 }
 
 .image-displace canvas {
-    box-shadow: 0px 0px 10px 5px var(--color-bg-contrast);
+    /* box-shadow: 0px 0px 10px 5px var(--color-bg-contrast); */
 }
 
 footer {
@@ -585,10 +584,14 @@ select {
 /* linear-gradient(-180deg, #FF7E31, #E62C03) */
 
 button,
-input[type=text],
 input[type=submit],
 select {
     width: 100%;
+}
+
+input[type=number],
+input[type=text] {
+    width: 50px;
 }
 
 button:hover,
@@ -629,7 +632,3 @@ input[type=radio] {
     font-size: 100%;
     cursor: pointer;
 } */
-
-canvas {
-    text-align: center;
-}

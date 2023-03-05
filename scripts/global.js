@@ -116,7 +116,7 @@
 })()
 
 function printLog() {
-    return true;
+    return false;
 }
 
 function debounce(func, timeout = 100) {

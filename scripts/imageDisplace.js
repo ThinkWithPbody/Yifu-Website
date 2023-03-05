@@ -19,17 +19,16 @@ import {
             console.log("Loaded PixiJS");
         };
 
-        const imageDisplace = function (i) {
-            const container = document.getElementById("image-displace-" + i);
-            const file = fileHandle(container.innerHTML);
-
+        const imageDisplace = function (container) {
             let imageSize = [2560, 1440];
-            let canvasSize = [Math.min(container.offsetWidth, imageSize[1] / 2)];
-            canvasSize.push(imageSize[0] / imageSize[1]);
-            canvasSize.splice(1, 0, canvasSize[0] / canvasSize[1]);
             const scaleFactor = [100, 100];
 
-            container.innerHTML = "";
+            let canvasSize = [0, 0, imageSize[0] / imageSize[1]];
+            function updateCanvasSize() {
+                canvasSize[0] = Math.min(container.offsetWidth, imageSize[1] / 2);
+                canvasSize[1] = canvasSize[0] / canvasSize[2];
+            };
+            updateCanvasSize();
 
             let containerBG = getComputedStyle(document.querySelector("main")).getPropertyValue("--color-bg-off");
             let containerBGHSLA = HSLAStringToHSLA(containerBG);
@@ -42,7 +41,12 @@ import {
                 height: canvasSize[1],
             });
 
-            app.view.id = "image-displace-" + i + "-canvas"
+            const file = fileHandle(container.innerHTML);
+            container.innerHTML = "";
+
+            // app.view.id = "image-displace-" + i + "-canvas"
+            app.view.style = "box-shadow: 0px 0px 10px 5px var(--color-bg-contrast);"
+            container.style = "text-align: center;"
             container.appendChild(app.view);
 
             const baseImage = PIXI.Sprite.from(file.fileName + file.fileExtension);
@@ -62,14 +66,14 @@ import {
             displacementFilter.scale.y = 0;
 
             function appResize() {
-                canvasSize[0] = Math.min(Math.min(container.offsetWidth, imageSize[1] / 2));
-                canvasSize[1] = canvasSize[0] / canvasSize[2];
+                updateCanvasSize();
 
                 let containers = [app.view, app.renderer.screen, baseImage, depthMap];
-                for (i in containers) {
+                for (let i in containers) {
                     containers[i].width = canvasSize[0];
                     containers[i].height = canvasSize[1];
                 };
+
                 if (printLog() == true) {
                     console.log("Resized app");
                 };
@@ -95,7 +99,7 @@ import {
                 if (printLog() == true) {
                     console.log("Loading Displacement Filter " + i);
                 };
-                imageDisplace(i);
+                imageDisplace(images[i]);
             };
         };
         setTimeout(init, 250)
