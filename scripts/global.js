@@ -1,16 +1,15 @@
-// Load Global Scripts
-
+// Global Scripts
 (function () {
     if (printLog() == true) {
-        console.log("Loading Global")
+        console.log("Loading Global");
     };
 
     // Favicon
     let favicon = document.createElement("link");
     favicon.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded Icon")
-        }
+            console.log("Loaded Icon");
+        };
     };
     favicon.rel = "icon";
     favicon.href = "/assets/icons/favicon/favicon.ico";
@@ -19,8 +18,8 @@
     let stylesheet = document.createElement("link");
     stylesheet.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded Stylesheet")
-        }
+            console.log("Loaded Stylesheet");
+        };
     };
     stylesheet.rel = "stylesheet";
     stylesheet.href = "/styles/global.css";
@@ -29,11 +28,11 @@
     let blueprint = document.createElement("link");
     blueprint.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded Blueprint CSS")
-        }
+            console.log("Loaded Blueprint CSS");
+        };
 
 
-        let el = document.createElement("div")
+        let el = document.createElement("div");
         let supportsGrid = "string" == typeof el.style.grid;
 
         if (!supportsGrid) {
@@ -45,10 +44,10 @@
 
             blueprintFallback.onload = function () {
                 if (printLog() == true) {
-                    console.log("Loaded Blueprint Fallback CSS")
-                }
-            }
-        }
+                    console.log("Loaded Blueprint Fallback CSS");
+                };
+            };
+        };
     };
     blueprint.rel = "stylesheet";
     blueprint.href = "/styles/blueprint.min.css";
@@ -57,8 +56,8 @@
     let header = document.createElement("script");
     header.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded Header")
-        }
+            console.log("Loaded Header");
+        };
     };
     header.src = "/scripts/header.js";
     header.defer = true;
@@ -67,8 +66,8 @@
     let footer = document.createElement("script");
     footer.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded Footer")
-        }
+            console.log("Loaded Footer");
+        };
     };
     footer.src = "/scripts/footer.js";
     footer.defer = true;
@@ -77,8 +76,8 @@
     let fontawesome = document.createElement("link");
     fontawesome.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded Fontawesome")
-        }
+            console.log("Loaded Fontawesome");
+        };
     };
     fontawesome.rel = "stylesheet";
     fontawesome.href = "/assets/fonts/fontawesome-free-5.13.0-web/css/all.css";
@@ -87,8 +86,8 @@
     let pixijs = document.createElement("script");
     pixijs.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded PixiJS")
-        }
+            console.log("Loaded PixiJS");
+        };
     };
     pixijs.src = "/scripts/pixi.js";
     pixijs.defer = true;
@@ -97,8 +96,8 @@
     let imageDisplay = document.createElement("script");
     imageDisplay.onload = function () {
         if (printLog() == true) {
-            console.log("Loaded imageDisplay.js")
-        }
+            console.log("Loaded imageDisplay.js");
+        };
     };
     imageDisplay.src = "/scripts/imageDisplay.js";
     imageDisplay.type = "module";
@@ -113,19 +112,67 @@
     document.head.appendChild(fontawesome);
     // document.head.appendChild(pixijs);
     document.head.appendChild(imageDisplay);
-})()
+})();
 
+
+// Global Init
+
+(function () {
+    const loading = {};
+    loading.animation = 500;
+    loading.in = 250;
+    loading.out = 0;
+
+    document.addEventListener(`DOMContentLoaded`, function (event) {
+        function loadingHide() {
+            // document.querySelector(`#loading`).remove();
+
+            let eleLoading = document.querySelector(`#loading`);
+            eleLoading.style.setProperty(`transition-duration`, `0s`);
+            eleLoading.style.setProperty(`-webkit-transform`, `translateY(100%)`);
+            eleLoading.style.setProperty(`-ms-transform`, `translateY(100%)`);
+            eleLoading.style.setProperty(`transform`, `translateY(100%)`);
+
+            window.transitionToPage = function (event, href, eleLoading) {
+                eleLoading.style.setProperty(`transition-duration`, `0.5s`);
+                eleLoading.style.setProperty(`-webkit-transform`, `translateY(0%)`);
+                eleLoading.style.setProperty(`-ms-transform`, `translateY(0%)`);
+                eleLoading.style.setProperty(`transform`, `translateY(0%)`);
+                setTimeout(function () {
+                    window.location.href = href;
+                }, loading.animation + loading.out);
+            };
+
+            const a = Array.from(document.getElementsByTagName(`a`));        
+            for (let i in a) {
+                // if (a[i].href !== ``) {
+                //     let href = a[i].href;
+                //     a[i].addEventListener(`click`, function () { transitionToPage(event, href, eleLoading) });
+                //     a[i].href = `javascript:void(0);`;
+                // };
+            };
+        };
+        function loadingIn() {
+            document.querySelector(`#loading`).style.cssText += `-webkit-transform: translateY(-100%); -ms-transform: translateY(-100%); transform: translateY(-100%);`;
+            setTimeout(loadingHide, loading.animation);
+        };
+        setTimeout(loadingIn, loading.in);
+    });
+})();
+
+
+// Global Exports
 function printLog() {
     return false;
-}
+};
 
 function debounce(func, timeout = 100) {
     let timer;
     return (...args) => {
         clearTimeout(timer);
-        timer = setTimeout(() => { func.apply(this, args) }, timeout)
+        timer = setTimeout(() => { func.apply(this, args) }, timeout);
     };
-}
+};
 
 function throttle(func, timeout = 100) {
     let timer = 0;
@@ -134,9 +181,9 @@ function throttle(func, timeout = 100) {
         if (timer + timeout < now) {
             timer = now;
             return func.apply(this, arguments);
-        }
+        };
     };
-}
+};
 
 function fileHandle(innerHTML) {
     const filePath = innerHTML;
@@ -157,8 +204,8 @@ function fileHandle(innerHTML) {
         "fileNameShortSlice": fileNameShortSlice,
         "fileNameShort": fileNameShort,
         "fileExtension": fileExtension,
-    }
-}
+    };
+};
 
 function HSLAStringToHSLA(string) {
     let start = (Math.max(0, string.indexOf("(")) + 1 || Infinity);
@@ -182,8 +229,8 @@ function HSLAStringToHSLA(string) {
         "s": s,
         "l": l,
         "a": a,
-    }
-}
+    };
+};
 
 function HSLToHex(h, s, l) {
     l /= 100;
@@ -194,7 +241,7 @@ function HSLToHex(h, s, l) {
         return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
     };
     return `#${f(0)}${f(8)}${f(4)}`;
-}
+};
 
 export {
     printLog,
@@ -203,7 +250,7 @@ export {
     fileHandle,
     HSLAStringToHSLA,
     HSLToHex,
-}
+};
 
 // Append scripts
 
@@ -251,3 +298,8 @@ export {
 // }
 // customElements.define("component-footer", Component);
 // Optional third argument to inherit from: {extends: "p" }
+
+// Prevent Unload
+// window.onbeforeunload = function () {
+//     return true;
+// };
