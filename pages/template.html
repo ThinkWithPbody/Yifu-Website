@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
     <script type="module" src="/scripts/global.js" defer></script>
     <script type="module" src="/scripts/imageDisplace.js"></script>
     <style>
@@ -28,61 +28,14 @@
     </div>
     <load-header></load-header>
     <main>
-        <div bp="grid padding-left--lg padding-right--lg">
-
-            <div bp="12">
-                <h1>Title</h1>
-                <h3>Subtitle</h3>
-            </div>
-
-            <div bp="3@lg">
-
-                <h4>Short Description</h4>
-                <p>
-                    <em>Lorem ipsum</em> dolor sit amet, consectetur <a href="">adipiscing elit</a>, sed do eiusmod
-                    tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat.
-                </P>
-                <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <ul>
-                    <li>ul1</li>
-                    <li>ul2</li>
-                    <ul>
-                        <li>ul2.1</li>
-                        <li>ul2.2</li>
-                        <ul>
-                            <li>ul2.2.1</li>
-                            <li>ul2.2.2</li>
-                        </ul>
-                    </ul>
-                </ul>
-                <ol>
-                    <li>ol1</li>
-                    <li>ol2</li>
-                    <ol>
-                        <li>ol2.1</li>
-                        <li>ol2.2</li>
-                        <ol>
-                            <li>ol2.2.1</li>
-                            <li>ol2.2.2</li>
-                        </ol>
-                    </ol>
-                </ol>
-                <dl>
-                    <dt>Term</dt>
-                    <dd>Description</dd>
-                </dl>
-
-            </div>
-
-            <div bp="6@lg">
-
+        <div>
+            <h1>Title</h1>
+            <h3>Subtitle</h3>
+        </div>
+        <div bp="grid">
+            <div bp="9@lg">
                 <h4>Main</h4>
+                <h5></h5>
 
                 <div bp="grid">
                     <div bp="6@md vertical-start" class="image">/assets/images/test.png</div>
@@ -149,12 +102,65 @@
                     </tr>
                 </table>
             </div>
-
             <div bp="3@lg">
-
-                <h4>Related</h4>
+                <h4>Off</h4>
+                <h5></h5>
+                <p>
+                    <em>Lorem ipsum</em> dolor sit amet, consectetur <a href="">adipiscing elit</a>, sed do
+                    eiusmod
+                    tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi
+                    ut
+                    aliquip ex ea commodo consequat.
+                </P>
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                    in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
                 <ul>
-                    <li><a href="/pages/template.html">dev template</a></li>
+                    <li>ul1</li>
+                    <li>ul2</li>
+                    <ul>
+                        <li>ul2.1</li>
+                        <li>ul2.2</li>
+                        <ul>
+                            <li>ul2.2.1</li>
+                            <li>ul2.2.2</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <ol>
+                    <li>ol1</li>
+                    <li>ol2</li>
+                    <ol>
+                        <li>ol2.1</li>
+                        <li>ol2.2</li>
+                        <ol>
+                            <li>ol2.2.1</li>
+                            <li>ol2.2.2</li>
+                        </ol>
+                    </ol>
+                </ol>
+                <dl>
+                    <dt>Term</dt>
+                    <dd>Description</dd>
+                </dl>
+            </div>
+        </div>
+        <div bp="grid">
+            <div bp="9@lg">
+                <div class="image-displace-display">/assets/images/test.png</div>
+                <div class="image-displace">/assets/images/1-Compo-001_0001.png</div>
+            </div>
+            <div bp="3@lg">
+                <h4>Related</h4>
+                <h5>Links</h5>
+                <ul>
+                    <li><a href="/pages/template.html">Template</a></li>
+                    <li><a href="pages/other/Instructions/Instructions.html">Instructions</a></li>
                     <li><a href="https://blueprintcss.dev/">Blueprint CSS</a></li>
                     <li><a href="https://pixijs.com/">PixiJS</a></li>
                     <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
@@ -162,10 +168,10 @@
                     <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
                 </ul>
 
-                <h4>Functions</h4>
+                <h5>Functions</h5>
                 <button onclick="audio.mute()">audio.mute()</button>
 
-                <h4>Headers</h4>
+                <h5>Headers</h5>
                 <h1>h1</h1>
                 <h2>h2</h2>
                 <h3>h3</h3>
@@ -173,7 +179,7 @@
                 <h5>h5</h5>
                 <h6>h6</h6>
 
-                <h4>Variables</h4>
+                <h5>Variables</h5>
                 <div style="background-color: var(--color-contrast);">--color-contrast</div>
                 <div style="background-color: var(--color-dark);">--color-dark</div>
                 <div style="background-color: var(--color-main);">--color-main</div>
@@ -182,14 +188,6 @@
                 <div style="background-color: var(--color-bg-dark);">--color-bg-dark</div>
                 <div style="background-color: var(--color-bg-main);">--color-bg-main</div>
                 <div style="background-color: var(--color-bg-off);">--color-bg-off</div>
-
-            </div>
-
-            <div bp="12">
-                <div bp="grid">
-                    <div bp="10@lg offset-2@lg" class="image-displace-display">/assets/images/test.png</div>
-                    <div bp="10@lg offset-2@lg" class="image-displace">/assets/images/1-Compo-001_0001.png</div>
-                </div>
             </div>
         </div>
     </main>

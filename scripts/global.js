@@ -118,6 +118,10 @@
 // Global Init
 
 (function () {
+    if (document.querySelector(`title`).innerHTML == ``) {
+        document.querySelector(`title`).innerHTML = fileHandle(window.location.pathname).fileNameShort;
+    };
+
     const loading = {};
     loading.animation = 500;
     loading.in = 250;
@@ -133,7 +137,7 @@
             eleLoading.style.setProperty(`-ms-transform`, `translateY(100%)`);
             eleLoading.style.setProperty(`transform`, `translateY(100%)`);
 
-            window.transitionToPage = function (event, href, eleLoading) {
+            window.transitionToPage = function (href, eleLoading) {
                 eleLoading.style.setProperty(`transition-duration`, `0.5s`);
                 eleLoading.style.setProperty(`-webkit-transform`, `translateY(0%)`);
                 eleLoading.style.setProperty(`-ms-transform`, `translateY(0%)`);
@@ -143,13 +147,14 @@
                 }, loading.animation + loading.out);
             };
 
-            const a = Array.from(document.getElementsByTagName(`a`));        
+            const a = Array.from(document.getElementsByTagName(`a`));
             for (let i in a) {
-                // if (a[i].href !== ``) {
-                //     let href = a[i].href;
-                //     a[i].addEventListener(`click`, function () { transitionToPage(event, href, eleLoading) });
-                //     a[i].href = `javascript:void(0);`;
-                // };
+                if (a[i].href !== ``) {
+                    let href = a[i].href;
+                    a[i].onclick = function (event) { event.preventDefault(); };
+                    a[i].addEventListener(`click`, function () { transitionToPage(href, eleLoading) });
+                    // a[i].href = `javascript:void(0);`;
+                };
             };
         };
         function loadingIn() {
@@ -185,8 +190,8 @@ function throttle(func, timeout = 100) {
     };
 };
 
-function fileHandle(innerHTML) {
-    const filePath = innerHTML;
+function fileHandle(path) {
+    const filePath = path;
 
     const fileNameSlice = (Math.max(0, filePath.lastIndexOf(".")) || Infinity);
     const fileName = filePath.slice(0, fileNameSlice);
@@ -195,14 +200,15 @@ function fileHandle(innerHTML) {
     const fileNameShort = fileName.slice(fileNameShortSlice);
 
     const fileExtension = filePath.slice(fileNameSlice);
-    innerHTML = "";
+    path = "";
 
     return {
-        "filePath": filePath,
-        "fileNameSlice": fileNameSlice,
-        "fileName": fileName,
-        "fileNameShortSlice": fileNameShortSlice,
-        "fileNameShort": fileNameShort,
+        "path": path,
+        "filePath": filePath, // filePath
+        "fileNameSlice": fileNameSlice, // fileNameSlice
+        "fileName": fileName, // fileName
+        "fileNameShortSlice": fileNameShortSlice, // fileNameShortSlice
+        "fileNameShort": fileNameShort, // fileNameShort
         "fileExtension": fileExtension,
     };
 };

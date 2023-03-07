@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="module" src="/scripts/global.js" defer></script>
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading"
+        style="display: flex; justify-content: center; align-content: center; position: fixed; top:0px; left:0px; width:100%; height:100%; background-color: hsl(0, 0%, 5%, 100%); transition-duration: 0.5s; z-index:100;">
+        <div id="loading-animation"
+            style="position: fixed; top: 50%; border: 8px solid hsl(50, 0%, 30%, 100%); border-top: 8px solid hsl(50, 50%, 60%, 100%); border-radius: 50%; width: 100px; height: 100px; box-sizing: border-box; animation: spin 0.5s linear infinite;">
+        </div>
+    </div>
+    <load-header></load-header>
+    <main>
+        <div>
+            <h1>Laser Cutting Projects</h1>
+            <h3></h3>
+        </div>
+        <div bp="grid">
+            <div bp="9@lg">
+                <h4></h4>
+                <div class="image-display">./Egg Holder Bike.jpg</div>
+            </div>
+            <div bp="3@lg">
+                <h4></h4>
+                <h5>Egg Holder Bike</h5>
+                <p>
+                    Displays in browser using both raytracing and interactive rendering.
+                </p>
+
+                <h5>Sketchfab</h5>
+                <div class="sketchfab-embed-wrapper"> <iframe title="Laser-cut Egg Holder Bike Elsha" frameborder="0"
+                        allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                        execution-while-out-of-viewport execution-while-not-rendered web-share
+                        src="https://sketchfab.com/models/117eb93c4f464fb28bfb9d3e8e8884ab/embed?ui_theme=dark">
+                    </iframe>
+                    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a
+                            href="https://sketchfab.com/3d-models/laser-cut-egg-holder-bike-elsha-117eb93c4f464fb28bfb9d3e8e8884ab?utm_medium=embed&utm_campaign=share-popup&utm_content=117eb93c4f464fb28bfb9d3e8e8884ab"
+                            target="_blank" style="font-weight: bold; color: #1CAAD9;"> Laser-cut Egg Holder Bike Elsha
+                        </a> by <a
+                            href="https://sketchfab.com/ThinkWithP_body?utm_medium=embed&utm_campaign=share-popup&utm_content=117eb93c4f464fb28bfb9d3e8e8884ab"
+                            target="_blank" style="font-weight: bold; color: #1CAAD9;"> ThinkWithP_body </a> on <a
+                            href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=117eb93c4f464fb28bfb9d3e8e8884ab"
+                            target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <load-footer></load-footer>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-{/* <load-footer></load-footer> */}
+{/* <load-footer></load-footer> */ }
 
 class LoadFooter extends HTMLElement {
     constructor() {
@@ -7,9 +7,7 @@ class LoadFooter extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-        <footer>
-            <p>&copy 2023 Yifu Ding</p>
-        </footer>
+        <footer>&copy 2023 Yifu Ding</footer>
         `;
     }
 }

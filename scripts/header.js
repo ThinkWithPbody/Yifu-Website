@@ -10,8 +10,8 @@ class LoadHeader extends HTMLElement {
             <header>
                 <nav bp="grid">
                     <div bp="1 hide show@lg">
-                        <div>
-                        <a href="/index.html"><img src="/assets/icons/favicon/favicon.ico" alt="favicon"></a>
+                        <div style="display: flex; justify-content: center;">
+                            <a href="/index.html" style="display: block; width: fit-content; height: 100%; "><img src="/assets/icons/favicon/favicon.ico" alt="favicon" style="filter: sepia(50%) brightness(50%);"></a>
                         </div>
                     </div>
                     <div bp="12 8@lg offset-3@lg flex">
@@ -40,6 +40,7 @@ class LoadHeader extends HTMLElement {
                             <div class="dropdown-content" id="content3">
                                 <a href="">BibWord</a>
                                 <a href="">Depth Map Displacement</a>
+                                <a href="/pages/other/laser-cut/laser-cut.html">Laser Cut</a>
                                 <a href="/pages/other/apoapsis-calc/apoapsis-calc.html">Apoapsis Calculator</a>
                                 <a href="/pages/other/trusted/trusted.html">Trusted Names</a>
                             </div>

@@ -171,6 +171,9 @@ text-align-last: justify; */
     --border-main: 1px solid var(--color-main);
     --border-dark: 1px solid var(--color-dark);
 
+    --box-shadow-large: 0px 0px 50px 0px var(--color-bg-contrast);
+    --box-shadow-medium: 0px 0px 50px 0px var(--color-bg-contrast);
+
     --width-max: 1920px;
 
     --scale-factor: 1.1;
@@ -194,26 +197,21 @@ header {
 }
 
 :focus-visible {
-    /* box-shadow: 5px 5px 0px blue; */
-    outline: 2px solid var(--color-off);
-}
-
-:focus-visible {
-    /* box-shadow: 5px 5px 0px blue; */
+    box-shadow: 0px 0px 0px 3px var(--color-contrast);
     outline: 2px solid var(--color-off);
 }
 
 html {
-    overflow-y: scroll;
     height: 100%;
     box-sizing: border-box;
     font-family: FiraCode, OpenDyslexicMono, OpenDyslexic, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
 
-    background-color: cyan;
-    color: magenta;
-    background-color: cyan;
-    color: magenta;
+    /* background-color: cyan;
+    color: magenta; */
+    overflow-y: scroll;
+    background-color: var(--color-bg-dark);
+    color: var(--color-contrast);
 }
 
 body {
@@ -232,13 +230,15 @@ main {
 }
 
 header {
-    position: sticky;
-    top: 0;
+    /* position: sticky; */
+    position: fixed;
+    /* top: 0; */
     left: 0;
     right: 0;
     height: 50px;
+    box-shadow: var(--box-shadow-large);
 
-    z-index: 2;
+    z-index: 5;
 }
 
 nav {
@@ -273,9 +273,9 @@ nav div a {
     padding: calc((50px - 36px) / 2) 0px;
 }
 
-.dropdown-header:hover {
-    /* box-shadow: inset 0px 0px 20px 0px var(--color-bg-dark); */
-}
+/* .dropdown-header:hover {
+    box-shadow: inset 0px 0px 20px 0px var(--color-bg-dark);
+} */
 
 .dropdown-header a:hover {
     transform: scale(var(--scale-factor));
@@ -291,18 +291,16 @@ nav div a {
     height: unset;
     padding: 5px 10px 10px;
     background-color: var(--color-bg-contrast);
+    box-shadow: var(--box-shadow-large);
     line-height: 1;
+    z-index: 4;
 }
 
 .dropdown-content a {
     height: min-content;
     font-size: 100%;
     padding: 5px 20px;
-    /* margin: 0px 0px 0px 10px; */
     text-align: center;
-    /* top: auto;
-    -ms-transform: none;
-    transform: none; */
 }
 
 .dropdown-content:hover {
@@ -330,7 +328,7 @@ main {
     width: var(--width-max);
     max-width: 100%;
     min-height: calc(100% - 100px);
-    padding: 20px 0px;
+    padding: 50px;
 
     z-index: 1;
 }
@@ -346,6 +344,27 @@ main {
     background-color: var(--color-bg-off);
     box-shadow: 0px 0px 10px 5px var(--color-bg-contrast);
     height: max-content;
+}
+
+.image-display,
+.image-displace-display {    
+    margin: 0px 0px 16px;
+}
+
+.image,
+.image-display {
+    /* cursor: cell; */
+    /* cursor: help; */
+    /* cursor: not-allowed; */
+    /* cursor: progress; */
+    /* cursor: wait; */
+    cursor: zoom-in;
+}
+
+.image-displace,
+.image-displace-display {
+    /* cursor: all-scroll; */
+    cursor: crosshair;
 }
 
 /* .image-display:hover,
@@ -381,67 +400,24 @@ main {
 }
 
 footer {
-    position: relative;
-    bottom: 0;
+    position: sticky;
+    bottom: -50px;
     height: 50px;
     width: 100%;
     color: var(--color-contrast);
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-footer p {
-    margin: 15px;
-    text-align: center;
-}
-
-.o1 {
-    order: 1;
-}
-
-.o2 {
-    order: 2;
-}
-
-.o3 {
-    order: 3;
-}
-
-.o4 {
-    order: 4;
+    z-index: 5;
+    box-shadow: var(--box-shadow-large);
 }
 
 @media only screen and (min-width: 1000px) {
     * {
         font-size: medium;
     }
-
-    /* [class*="column"] {
-        float: left;
-        padding: 0px 20px;
-    }
-
-    .column-left {
-        width: 20%;
-    }
-
-    .column-middle {
-        width: 60%;
-    }
-
-    .column-right {
-        width: 20%;
-    } */
-
-    .o1,
-    .o2,
-    .o3,
-    .o4 {
-        order: unset;
-    }
 }
-
 
 h1,
 h3,
@@ -458,7 +434,7 @@ h6 {
 h1,
 h2 {
     font-size: 200%;
-    margin: 30px 0px 15px;
+    margin: 24px 0px 16px;
     text-align: center;
     text-shadow: 2px 2px 0px var(--color-bg-main), 4px 4px 2px var(--color-bg-contrast);
 }
@@ -466,7 +442,7 @@ h2 {
 h3,
 h4 {
     font-size: 150%;
-    margin: 20px 0px 10px;
+    margin: 20px 0px 12px;
     text-align: center;
     text-shadow: 1px 1px 0px var(--color-bg-main), 2px 2px 2px var(--color-bg-contrast);
 }
@@ -474,20 +450,20 @@ h4 {
 h5,
 h6 {
     font-size: 100%;
-    margin: 15px 0px 10px;
+    margin: 16px 0px 8px;
 }
 
-h1 {
-    /* text-shadow: 2px 2px 0px var(--color-bg-main), 4px 4px 2px var(--color-bg-contrast); */
+/* h1 {
+    text-shadow: 2px 2px 0px var(--color-bg-main), 4px 4px 2px var(--color-bg-contrast);
 }
 
 h2 {
-    /* text-shadow: 2px 2px 2px var(--color-bg-contrast); */
+    text-shadow: 2px 2px 2px var(--color-bg-contrast);
 }
 
 h3 {}
 
-h4 {}
+h4 {} */
 
 p,
 ol,
@@ -500,7 +476,7 @@ input,
 select {
     color: var(--color-contrast);
     /* background-color: var(--color-bg-main); */
-    margin: 10px 0px;
+    margin: 8px 0px;
     /* border: var(--border-main); */
     /* border-radius: 5px; */
 }
@@ -525,37 +501,33 @@ a:hover {
 ol {
     list-style-type: decimal;
 }
-
 ol ol {
-    list-style-type: circled-decimal;
-}
-
-ol ol ol {
     list-style-type: lower-roman;
+}
+ol ol ol {
+    list-style-type: circled-decimal;
 }
 
 ul {
     /* list-style: square outside url(""); */
     list-style: square outside;
 }
-
 ul ul {
     list-style: disc outside;
 }
-
 ul ul ul {
     list-style: circle outside;
 }
 
-li {}
+/* li {}
 
-table {}
+table {} */
 
 td {
     text-align: center;
 }
 
-label {}
+/* label {} */
 
 button,
 input,
@@ -581,14 +553,13 @@ input[type=text] {
 button:hover,
 input[type=submit]:hover,
 input[type=radio]:hover {
-    /* background-color: var(--color-bg-main); */
-    box-shadow: inset 0px 20px 20px 0px var(--color-bg-main);
+    box-shadow: inset 0px 16px 16px 0px var(--color-bg-main);
     cursor: pointer;
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     text-decoration: none;
     font-size: 100%;
     cursor: pointer;
@@ -604,7 +575,7 @@ input::-webkit-inner-spin-button {
 }
 
 input[type=radio] {
-    margin: 0px;
+    margin: 0;
 }
 
 select {

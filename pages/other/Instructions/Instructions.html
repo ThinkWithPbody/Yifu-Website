@@ -3,35 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script type="text/javascript" src="/scripts/global.js" defer></script>
+    <title></title>
+    <script type="module" src="/scripts/global.js" defer></script>
+    <script type="module" src="/scripts/imageDisplace.js"></script>
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
-
+    <div id="loading"
+        style="display: flex; justify-content: center; align-content: center; position: fixed; top:0px; left:0px; width:100%; height:100%; background-color: hsl(0, 0%, 5%, 100%); transition-duration: 0.5s; z-index:100;">
+        <div id="loading-animation"
+            style="position: fixed; top: 50%; border: 8px solid hsl(50, 0%, 30%, 100%); border-top: 8px solid hsl(50, 50%, 60%, 100%); border-radius: 50%; width: 100px; height: 100px; box-sizing: border-box; animation: spin 0.5s linear infinite;">
+        </div>
+    </div>
     <load-header></load-header>
     <main>
-
         <div>
             <h1>Instructions</h1>
             <h3>This stuff is supposed to be private, please let me know how you got here.</h3>
         </div>
-
-        <div bp="grid padding-left--lg padding-right--lg 3@lg 6@md vertical-start">
-
+        <div bp="grid 6@lg">
             <div>
-                <h4>Epson Connect</h4>
+                <h4>Uploading Models To Sketchfab</h4>
                 <p>
-                    twp-et-2850@print.epsonconnect.com
-
-                    Product name: ET-2850
-
-                    Printer serial number: X8RU036186
+                <h5>Simple bake</h5>
+                <ol>
+                    <li>Export bakes</li>
+                    <li>Copy objects and apply bakes</li>
+                    <li>If <em>Multiple objects to one texture set</em>
+                        <ul>
+                            <li>Name texture</li>
+                            <li>Use active UV OR Combine Active UVs</li>
+                        </ul>
+                    </li>
+                    <li>Save preset</li>
+                </ol>
                 </p>
             </div>
             <div>
-                <h4>EPSON ET-2850 Book Printing Instructions</h4>
+                <h4>Uploading Panorama Tours</h4>
                 <p>
+                    2:1, at least 4320 x 2160
+                    <a
+                        href="https://3dground.net/en/article/free-service-and-hosting-for-360-panorama-tours-marzipano-github">Black
+                        Design</a>
+                    SimpleBake Export bakes, no mesh
+                    Export FBX selection only, apply modifiers
+                </p>
+            </div>
+            <div>
+                <h4>Epson Connect</h4>
+                <dl>
+                    <dt>Term</dt>
+                    <dd>Description</dd>
+                </dl>
+
+                <dl>
+                    <dt>Product name</dt>
+                    <dd>ET-2850</dd>
+                </dl>
+                <dl>
+                    <dt>Printer serial number</dt>
+                    <dd>X8RU036186</dd>
+                </dl>
+            </div>
+            <div>
+                <h4>EPSON ET-2850 Book Printing Instructions</h4>
                 <ol>
                     <li>
                         <p>To the left, in Page Thumbnails, select all pages with Ctrl+A and Right Click &gt; Crop
@@ -123,52 +170,11 @@
                         <p>Click Print if everything looks good.</p>
                     </li>
                 </ol>
-                </p>
             </div>
-            <div>
-                <h4>Uploading Models To Sketchfab</h4>
-                <p>
-                <h5>Simple bake</h5>
-                <ol>
-                    <li>Export bakes</li>
-                    <li>Copy objects and apply bakes</li>
-                    <li>If <em>Multiple objects to one texture set</em>
-                        <ul>
-                            <li>Name texture</li>
-                            <li>Use active UV OR Combine Active UVs</li>
-                        </ul>
-                    </li>
-                    <li>Save preset</li>
-                </ol>
-                </p>
-            </div>
-            <div>
-                <h4>Uploading Panorama Tours</h4>
-                <p>
-                    2:1, at least 4320 x 2160
-                    <a
-                        href="https://3dground.net/en/article/free-service-and-hosting-for-360-panorama-tours-marzipano-github">Black
-                        Design</a>
-                    SimpleBake Export bakes, no mesh
-                    Export FBX selection only, apply modifiers
-                </p>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-
-
-
-
-
-
-
         </div>
     </main>
     <load-footer></load-footer>
 
-
 </body>
+
+</html>
