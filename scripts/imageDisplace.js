@@ -49,13 +49,13 @@ import {
             container.style = `text-align: center;`
             container.appendChild(app.view);
 
-            const baseImage = PIXI.Sprite.from(file.fileName + file.fileExtension);
+            const baseImage = PIXI.Sprite.from(file.filePath + file.fileExtension);
             baseImage.width = canvasSize[0];
             baseImage.height = canvasSize[1];
             baseImage.transform.position.x = canvasSize[0] * - 0;
             app.stage.addChild(baseImage);
 
-            const depthMap = PIXI.Sprite.from(file.fileName + `_depth` + file.fileExtension);
+            const depthMap = PIXI.Sprite.from(file.filePath + `_depth` + file.fileExtension);
             depthMap.width = canvasSize[0];
             depthMap.height = canvasSize[1];
             app.stage.addChild(depthMap);

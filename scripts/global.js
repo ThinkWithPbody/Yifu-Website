@@ -118,8 +118,9 @@
 // Global Init
 
 (function () {
+    // Replace <title> with file name if empty
     if (document.querySelector(`title`).innerHTML == ``) {
-        document.querySelector(`title`).innerHTML = fileHandle(window.location.pathname).fileNameShort;
+        document.querySelector(`title`).innerHTML = toTitleCase(fileHandle(window.location.pathname).fileName);
     };
 
     const loading = {};
@@ -190,28 +191,35 @@ function throttle(func, timeout = 100) {
     };
 };
 
-function fileHandle(path) {
-    const filePath = path;
+function fileHandle(string) {
+    const path = string;
+    const filePathSlice = (Math.max(0, path.lastIndexOf(".")) || Infinity);
+    const filePath = path.slice(0, filePathSlice);
 
-    const fileNameSlice = (Math.max(0, filePath.lastIndexOf(".")) || Infinity);
-    const fileName = filePath.slice(0, fileNameSlice);
+    const fileNameSlice = (Math.max(0, filePath.lastIndexOf("/")) || Infinity) + 1;
+    const fileName = filePath.slice(fileNameSlice);
 
-    const fileNameShortSlice = (Math.max(0, fileName.lastIndexOf("/")) || Infinity) + 1;
-    const fileNameShort = fileName.slice(fileNameShortSlice);
-
-    const fileExtension = filePath.slice(fileNameSlice);
-    path = "";
+    const fileExtension = path.slice(filePathSlice);
 
     return {
         "path": path,
         "filePath": filePath, // filePath
-        "fileNameSlice": fileNameSlice, // fileNameSlice
+        "filePathSlice": filePathSlice, // fileNameSlice
         "fileName": fileName, // fileName
-        "fileNameShortSlice": fileNameShortSlice, // fileNameShortSlice
-        "fileNameShort": fileNameShort, // fileNameShort
+        "fileNameSlice": fileNameSlice, // fileNameShortSlice
         "fileExtension": fileExtension,
     };
 };
+
+function toTitleCase(string) {
+    // Replace dashes and underscores with spaces
+    const stringWithSpaces = string.replace(/[-_]/g, " ");
+    
+    // Convert the string to title case
+    return stringWithSpaces.replace(/\w\S*/g, function(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+  };
 
 function HSLAStringToHSLA(string) {
     let start = (Math.max(0, string.indexOf("(")) + 1 || Infinity);

@@ -21,7 +21,7 @@ const imageDisplaceDisplay = function (container) {
 
     const desc = document.createElement("div");
     desc.classList.add("image-display-description");
-    desc.innerText = file.fileNameShort;
+    desc.innerText = file.fileName;
 
 
     container.innerHTML = "";
@@ -48,7 +48,7 @@ const imageDisplay = function (container) {
 
     const desc = document.createElement("div");
     desc.classList.add(`image-display-description`);
-    desc.innerText = file.fileNameShort;
+    desc.innerText = file.fileName;
 
 
     // container.innerHTML = a;
@@ -72,8 +72,9 @@ const imageLoad = function (container) {
     const file = fileHandle(container.innerHTML);
 
     const img = document.createElement(`img`);
+    console.log(file)
     img.src = file.path;
-    img.alt = file.fileNameShort;
+    img.alt = file.fileName;
     img.style = `width: 100%;`;
 
     const a = document.createElement(`a`);
@@ -112,7 +113,7 @@ const modalLoad = function (event, parent, ele, file) {
 
     let desc = document.createElement(`div`);
     desc.classList.add(`image-display-description`);
-    desc.innerText = file.fileNameShort;
+    desc.innerText = file.fileName;
 
     let container = document.querySelector(`body`);
     modalContent.appendChild(ele.cloneNode(true));
