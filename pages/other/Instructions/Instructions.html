@@ -35,44 +35,47 @@
         <div bp="grid 6@lg">
             <div>
                 <h4>Uploading Models To Sketchfab</h4>
-                <p>
-                <h5>Simple bake</h5>
                 <ol>
-                    <li>Export bakes</li>
-                    <li>Copy objects and apply bakes</li>
-                    <li>If <em>Multiple objects to one texture set</em>
-                        <ul>
-                            <li>Name texture</li>
-                            <li>Use active UV OR Combine Active UVs</li>
-                        </ul>
-                    </li>
-                    <li>Save preset</li>
+                    <li>Export bakes from SimpleBake:</li>
+                    <ol>
+                        <li>Turn on Copy Objects and Apply Bakes.</li>
+                        <li>Use Export baked images on, without meshes.</li>
+                        <li>Use <em>Cycles Bake</em> or <em>PBR Bake</em>.</li>
+                        <li>If <em>Multiple objects to one texture set</em>:</li>
+                        <ol>
+                            <li>Name texture.</li>
+                            <li>Use active UV OR Combine Active UVs.</li>
+                        </ol>
+                        <li>Save preset.</li>
+                    </ol>
+                    <li>Export FBX set to selection only and apply modifiers.</li>
+                    <li>Upload FBX to Sketchfab, check maps and set correct specularity.</li>
                 </ol>
-                </p>
             </div>
             <div>
                 <h4>Uploading Panorama Tours</h4>
-                <p>
-                    2:1, at least 4320 x 2160
-                    <a
-                        href="https://3dground.net/en/article/free-service-and-hosting-for-360-panorama-tours-marzipano-github">Black
-                        Design</a>
-                    SimpleBake Export bakes, no mesh
-                    Export FBX selection only, apply modifiers
-                </p>
+                <ol>
+                    <li>Render at a ratio of 2:1, with at least 4320 x 2160 pixels.</li>
+                    <li>Name and upload the images to <a href="https://www.marzipano.net/tool/">Marzipano Tool</a>.</li>
+                    <li>Customize the UI with a modern CSS stylesheet such as <a
+                            href="https://3dground.net/en/article/free-service-and-hosting-for-360-panorama-tours-marzipano-github">Black
+                            Design</a>, or use my <a>condensed</a> version for multiple panoramas at once.</li>
+
+                    <li></li>
+                </ol>
+            </div>
+            <div>
+                <h4>Uploading videos to YouTube</h4>
+                <dl>
+                    <dt>Forced CC</dt>
+                    <dd>yt:cc=on</dd>
+                </dl>
             </div>
             <div>
                 <h4>Epson Connect</h4>
                 <dl>
-                    <dt>Term</dt>
-                    <dd>Description</dd>
-                </dl>
-
-                <dl>
                     <dt>Product name</dt>
                     <dd>ET-2850</dd>
-                </dl>
-                <dl>
                     <dt>Printer serial number</dt>
                     <dd>X8RU036186</dd>
                 </dl>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="module" src="/scripts/global.js" defer></script>
+    <!-- <script type="module" src="/scripts/imageDisplace.js"></script> -->
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script src="blender-addons.js"></script>
+</head>
+
+<body>
+    <div id="loading"
+        style="display: flex; justify-content: center; align-content: center; position: fixed; top:0px; left:0px; width:100%; height:100%; background-color: hsl(0, 0%, 5%, 100%); transition-duration: 0.5s; z-index:100;">
+        <div id="loading-animation"
+            style="position: fixed; top: 50%; border: 8px solid hsl(50, 0%, 30%, 100%); border-top: 8px solid hsl(50, 50%, 60%, 100%); border-radius: 50%; width: 100px; height: 100px; box-sizing: border-box; animation: spin 0.5s linear infinite;">
+        </div>
+    </div>
+    <load-header></load-header>
+    <main>
+        <div>
+            <h1></h1>
+            <h3></h3>
+        </div>
+        <div bp="grid">
+            <div bp="7@lg">
+                <h4></h4>
+                <h4>External Addons</h4>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>Addon</td>
+                        <td>Comment</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://www.sheepit-renderfarm.com/home">SheepIt</a></td>
+                        <td>\Blender\sheepit-autoupdate.exe -request-time "24:00-06:00,11:00-16:00"</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/sketchfab/blender-plugin">Sketchfab<a></td>
+                        <td>\Blender\Addon\Sketchfab</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/ds5ax7">Powersave<a></td>
+                        <td>\Blender\Assets\project - %Y-%m-%dT%H_%M_%S%z - Traffic</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://remington.pro/software/blender/atomic/">Atomic<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://www.blendermarket.com/pickup/fmy6nf">Simple Tabs<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a
+                                href="https://makertales.gumroad.com/l/CADsketcher?layout=profile&recommended_by=library">CAD
+                                Sketcher<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://gumroad.com/d/a0bf312b73e6e55749bc4f65ae72bbe5">CAD Transform<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://app.gumroad.com/d/ec543cdd76bcf8ce921ba6538fd1794b">BagaPie Modifier<a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://blendermarket.com/products/fluent">Fluent<a></td>
+                        <td>\Blender\Addon\instant-meshes-windows\Instant Meshes.exe</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/aorrl2">Poly Haven Asset Browser<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://www.blenderkit.com/">Blender Kit<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/4tnbcb">Scatter 5<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://blendermarket.com/pickup/d7erg2">Asset Management<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/11yzb1">RenderSet Pro<a></td>
+                        <td>{blend_parent_folder}\{blend_filename}_renderset\{context_name}\{date_time} -
+                            {blend_parent_folder}\{blend_filename}_renderset\Contexts\{context_name}_</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/eb5irh">Botaniq<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/11yzb1">Materialiq<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/3boccp">Smart Weathering<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/4wg34g">Sanctus Library<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/ch84uf">Physical Starlight and Atmosphere<a></td>
+                        <td>No Toolbar; Use physical values</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://www.blendermarket.com/products/pro-lighting-skies">Pro Lighting Sky<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://app.gumroad.com/d/5323cff8aea5c5b0db98044863d1d14c">Image 2 Mesh<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/9zez6u">Alt Tab Ocean & Water<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/products/ocd">One Click Damage<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/ds5ax7">Simplicage<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/cc3jbx">Simplebake<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://www.blendermarket.com/pickup/dflmkq">Dream Textures<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/jarrellmark/ai_upscaler_for_blender">AI Upscaler<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://blendermarket.com/products/ai-render">AI Render<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://app.gumroad.com/d/60cc067ea5010445d169138af2cb5133">ColorRampConverter<a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://www.uv-packer.com/blender/">UV-Packer<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://app.gumroad.com/d/42afffd0844ff72b15e381fc00494e99">UVPackmaster 2 SDK
+                                STANDARD<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://app.gumroad.com/d/20aa090979314507f44763be8cb3ee8a">Tx Layer<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://gumroad.com/l/PgyXc">Screen Space Global Illumination for Blender Eevee<a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://clemensbeute.gumroad.com/l/heZDT?recommended_by=library">Flow Map
+                                Painter<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blenderbim.org/download.html">BlenderBIM<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/vvoovv/blender-osm">blender-osm<a></td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/domlysz/BlenderGIS">Blender GIS<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/eliemichel/MapsModelsImporter">Maps Models Importer<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://vsb.gumroad.com/l/UQxFE">Terrain Nodes<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://app.gumroad.com/d/79913660953f134ba18d8a9c10f946cf">Lily Texture Packer<a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://eliemichel.gumroad.com/l/KSvXuu?recommended_by=library">LilyCaptureMerger<a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/eliemichel/LilySurfaceScraper">Lily’s Surface Scraper<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/Shahzod114/Blender-BakeLab2">Blender-BakeLab2<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/leomoon-studios/leomoon-lightstudio/">LeoMoon LightStudio<a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/nortikin/sverchok">Sverchok<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/JacquesLucke/animation_nodes">Animation Node<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/scorpion81/Blender-Molecular-Script">Molecular<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/TheDuckCow/MCprep">MCprep<a></td>
+                        <td>https://github.com/jmc2obj/j-mc-2-obj/releases
+                            https://www.realtimerendering.com/erich/minecraft/public/mineways/</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>fSpy</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/thegoodhen/AprilTools">AprilTools<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://cloud.blender.org/blog/introducing-blender-sync">Blender Cloud<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Simple asset manager</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Beam builder</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Mira tools</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/Muthird/CommandRecorder2.8">Command Recorder<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Camera manager</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Render Burst</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Real camera</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Real sky</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Real grass</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Real tree</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>MTree</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Gaffer</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Easy HDRI</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/BenjaminSauder/EdgeFlow">Edge Flow<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Mesh tool</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>B surfaces</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><a href="https://github.com/MadMinstrel/blender-sculpt-tools">Sculpt Tool<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Align vertices to grease pencil</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Parent to empty</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>UVsquares</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Floor generator</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>One vertex mesh</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <h4>Internal Addons</h4>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>Addon</td>
+                        <td>Comment</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>MeasureIt</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Precision Drawing Tools</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Curve Tools</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Extra Objects</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Ivy Gen</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Sapling Tree Gen</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Simplify Curves+</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>A.N.T.Landscape</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Archimesh</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Extra Objects</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Turnaround Camera</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Add Camera Rigs</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Export AutoCAD DXF</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Export Paper Model</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Import Images as Planes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>NewTek MDD format</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Copy Attributes Menu</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Modifier Tools</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Dynamic Sky</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Sun Position</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Tri-lighting</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Material Library</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Material Utilities</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>3D Print Toolbox</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>F2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Looptools</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>TinyCAD Mesh Tools</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Node Wrangler</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Bool Tool</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Real Snow</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Scatter Objects</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Freestyle SVG Exporter</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Rigify</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Storeypencil - Storyboard Tools</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Blender ID Authentication</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Magic UV</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Refine tracking solution</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div bp="5@lg">
+                <h4>How did I convert this long list from Markdown to HTML?</h4>
+                <h5>JavaScript</h5>
+                <pre data-src="blender-addons.js" class="line-numbers match-braces" data-range="1,"
+                    data-line="25-30"></pre>
+                <h5>Outputs</h5>
+                <script type="text/plain" class="language-markup">
+                    <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td>Refine tracking solution</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td><a href="https://www.sheepit-renderfarm.com/home">SheepIt</a></td>
+                    <td>\Blender\sheepit-autoupdate.exe -request-time "24:00-06:00,11:00-16:00"</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox"></td>
+                    <td><a href="https://github.com/sketchfab/blender-plugin">Sketchfab</a></td>
+                    <td>\Blender\Addon\Sketchfab\</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td><a href="https://blendermarket.com/pickup/ds5ax7">Powersave</a></td>
+                    <td>\Blender\Assets\project\ - %Y-%m-%dT%H_%M_%S%z - Traffic</td>
+                    </tr></script>
+                <h5>Stylesheet</h5>
+                <pre data-src="/styles/global.css" class="line-numbers match-braces" data-range="509,535"
+                    data-line="512-513,533-534" data-line-offset="509"></pre>
+            </div>
+        </div>
+    </main>
+    <load-footer></load-footer>
+
+</body>
+
+</html>

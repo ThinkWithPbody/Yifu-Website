@@ -3,46 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Trusted Names</title>
-    <script type="text/javascript" src="/scripts/global.js" defer></script>
+    <title></title>
+    <script type="module" src="/scripts/global.js" defer></script>
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
-
+    <div id="loading"
+        style="display: flex; justify-content: center; align-content: center; position: fixed; top:0px; left:0px; width:100%; height:100%; background-color: hsl(0, 0%, 5%, 100%); transition-duration: 0.5s; z-index:100;">
+        <div id="loading-animation"
+            style="position: fixed; top: 50%; border: 8px solid hsl(50, 0%, 30%, 100%); border-top: 8px solid hsl(50, 50%, 60%, 100%); border-radius: 50%; width: 100px; height: 100px; box-sizing: border-box; animation: spin 0.5s linear infinite;">
+        </div>
+    </div>
     <load-header></load-header>
     <main>
-
         <div>
-            <h1>Trusted Names</h1>
+            <h1>List of trusted and distrusted names</h1>
+            <h3>Some of the <em>stuff</em> has <a href="">links</a></h3>
         </div>
-
-        <div bp="grid 4@lg" style="padding:0px 20px">
-
+        <div bp="grid">
             <div bp="6@lg">
-
                 <h4>Trusted</h4>
-
-            </div>
-
-            <div bp="6@lg">
-
-                <h4>Distrusted</h4>
-                <p>some of the <em>stuff</em> has <a href="sd">links</a></p>
                 <h5>Camera</h5>
-                <ol>
-                    <li>Go Pro</li>
-                </ol>
-                insta360
-
-                <h5>Web</h5>
-                <ol>
-                    <li>Go Daddy</li>
-                </ol>
-
+                <li>insta360</li>
             </div>
-
+            <div bp="6@lg">
+                <h4>Distrusted</h4>
+                <h5>Camera</h5>
+                <li>Go Pro</li>
+                <h5>Web</h5>
+                <li>Go Daddy</li>
+            </div>
         </div>
-
     </main>
     <load-footer></load-footer>
 

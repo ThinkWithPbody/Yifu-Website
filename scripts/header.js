@@ -18,40 +18,40 @@ class LoadHeader extends HTMLElement {
                         
 
                         <div class="dropdown-header" id="dropdown1">
-                            <a href="">Architecture</a>
-                            <div class="dropdown-content" id="content1">
+                            <a href="/pages/architecture/architecture.html">Architecture</a>
+                            <!-- <div class="dropdown-content" id="content1">
                                 <a href="">Architecture1</a>
                                 <a href="">Architecture2</a>
                                 <a href="">Architecture3</a>
-                            </div>
+                            </div> -->
                         </div>
                         
                         <div class="dropdown-header" id="dropdown2">
-                            <a href="">Design</a>
-                            <div class="dropdown-content" id="content2">
+                            <a>Design</a>
+                            <!-- <div class="dropdown-content" id="content2">
                                 <a href="">Design1</a>
                                 <a href="">Design2</a>
                                 <a href="">Design3</a>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="dropdown-header" id="dropdown3">
-                            <a href="">Other</a>
+                            <a>Other</a>
                             <div class="dropdown-content" id="content3">
-                                <a href="">BibWord</a>
-                                <a href="">Depth Map Displacement</a>
-                                <a href="/pages/other/laser-cut/laser-cut.html">Laser Cut</a>
-                                <a href="/pages/other/apoapsis-calc/apoapsis-calc.html">Apoapsis Calculator</a>
-                                <a href="/pages/other/trusted/trusted.html">Trusted Names</a>
+                            <a href="">Depth Map Displacement On The Web</a>
+                            <a href="/pages/other/laser-cut/laser-cut.html">Laser Cut Projects</a>
+                            <a href="/pages/other/blender-addons/blender-addons.html">Automating the boring stuff... with JavaScript</a>
+                            <a href="/pages/other/BibWord/BibWord.html">Intro To BibWord</a>
+                            <a href="/pages/other/apoapsis-calc/apoapsis-calc.html">Apoapsis Calculator</a>
                             </div>
                         </div>
 
                         <div class="dropdown-header">
-                            <a href="">About</a>
+                            <a href="/index.html">About</a>
                         </div>
 
                         <div class="dropdown-header">
-                            <a href="">Contact</a>
+                            <a href="/index.html">Contact</a>
                         </div>
                     </div>
                 </nav>

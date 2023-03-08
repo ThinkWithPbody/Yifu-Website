@@ -72,7 +72,6 @@ const imageLoad = function (container) {
     const file = fileHandle(container.innerHTML);
 
     const img = document.createElement(`img`);
-    console.log(file)
     img.src = file.path;
     img.alt = file.fileName;
     img.style = `width: 100%;`;

@@ -103,7 +103,25 @@
     imageDisplay.type = "module";
     imageDisplay.defer = true;
 
-
+    // prism.js
+    let prismjs = document.createElement("script");
+    prismjs.onload = function () {
+        if (printLog() == true) {
+            console.log("Loaded prism.js");
+        };
+    };
+    prismjs.src = "/scripts/prism.js";
+    
+    // prism.css
+    let prismcss = document.createElement("link");
+    prismcss.onload = function () {
+        if (printLog() == true) {
+            console.log("Loaded prism.css");
+        };
+    };
+    prismcss.rel = "stylesheet";
+    prismcss.href = "/styles/prism.css";
+    
     document.head.appendChild(favicon);
     document.head.appendChild(stylesheet);
     document.head.appendChild(blueprint);
@@ -112,6 +130,8 @@
     document.head.appendChild(fontawesome);
     // document.head.appendChild(pixijs);
     document.head.appendChild(imageDisplay);
+    document.head.appendChild(prismjs);
+    document.head.appendChild(prismcss);
 })();
 
 
@@ -196,7 +216,8 @@ function fileHandle(string) {
     const filePathSlice = (Math.max(0, path.lastIndexOf(".")) || Infinity);
     const filePath = path.slice(0, filePathSlice);
 
-    const fileNameSlice = (Math.max(0, filePath.lastIndexOf("/")) || Infinity) + 1;
+    // const fileNameSlice = (Math.max(0, filePath.lastIndexOf("/")) || Infinity) + 1;
+    const fileNameSlice = (Math.max(0, filePath.lastIndexOf("/")) || 0) + 1;
     const fileName = filePath.slice(fileNameSlice);
 
     const fileExtension = path.slice(filePathSlice);
