@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script type="module" src="/scripts/global.js" defer></script>
-    <script type="module" src="/scripts/imageDisplace.js"></script>
+    <script></script>
+    <script type="module" src="../scripts/global.js" defer></script>
+    <script type="module" src="../scripts/imageDisplace.js"></script>
     <style>
         @keyframes spin {
             0% {
@@ -30,11 +31,11 @@
     <main>
         <div>
             <h1>Title</h1>
-            <h3>Subtitle</h3>
+            <h2>Subtitle</h2>
         </div>
         <div bp="grid">
             <div bp="9@lg">
-                <h4>Main</h4>
+                <h3>Main</h3>
                 <h5></h5>
 
                 <div bp="grid">
@@ -65,19 +66,19 @@
 
                 <table>
                     <tr>
-                        <td>Audio</td>
-                        <td>Note</td>
-                        <td>Octave</td>
-                        <td>Frequency</td>
-                        <td>Gain</td>
+                        <th>Audio</th>
+                        <th>Note</th>
+                        <th>Octave</th>
+                        <th>Frequency</th>
+                        <th>Gain</th>
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td><input type="text" value="C" id="audioNote-1" step=""></td>
-                        <td><input type="number" value="4" id="audioOctave-1" step="1"></td>
-                        <td><input style="width: 80px" type="number" value="261.626" id="audioFrequency-1" step="50">
+                        <td class=><input type="text" value="C" id="audioNote-1" step=""></td>
+                        <td class=><input type="number" value="4" id="audioOctave-1" step="1"></td>
+                        <td class=><input style="width: 80px" type="number" value="261.626" id="audioFrequency-1" step="50">
                         </td>
-                        <td><input type="number" value="0.12" id="audioGain-1" step="0.04"></td>
+                        <td class=><input type="number" value="0.12" id="audioGain-1" step="0.04"></td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -95,15 +96,10 @@
                         </td>
                         <td><input type="number" value="0.04" id="audioGain-3" step="0.04"></td>
                     </tr>
-                    <tr>
-                        <td colspan="4">
-                            <h5 id="audio-description"></h5>
-                        </td>
-                    </tr>
                 </table>
             </div>
             <div bp="3@lg">
-                <h4>Off</h4>
+                <h3>Off</h3>
                 <h5></h5>
                 <p>
                     Lorem ipsum dolor <em>sit amet</em>, consectetur adipiscing elit, sed do eiusmod
@@ -148,19 +144,19 @@
         </div>
         <div bp="grid">
             <div bp="9@lg">
-                <h4></h4>
+                <h3></h3>
                 <h5></h5>
                 <div class="image-displace-display">/assets/images/test.png</div>
                 <div class="image-displace">/assets/images/1-Compo-001_0001.png</div>
             </div>
             <div bp="3@lg">
-                <h4>Related</h4>
+                <h3>Related</h3>
                 <h5>Links</h5>
                 <ul>
-                    <li><a href="/pages/template.html">Template</a></li>
-                    <li><a href="/pages/other/trusted/trusted.html">Trusted Names</a></li>
-                    <li><a href="/pages/other/Instructions/Instructions.html">Instructions</a></li>
-                    <li><a href="/pages/other/blender-addons/blender-addons.html">Blender Addons</a></li>
+                    <li><a href="../pages/template.html">Template</a></li>
+                    <li><a href="../pages/other/trusted/trusted.html">Trusted Names</a></li>
+                    <li><a href="../pages/other/Instructions/Instructions.html">Instructions</a></li>
+                    <li><a href="../pages/other/blender-addons/blender-addons.html">Blender Addons</a></li>
                     <li><a href="https://blueprintcss.dev/">Blueprint CSS</a></li>
                     <li><a href="https://pixijs.com/">PixiJS</a></li>
                     <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>

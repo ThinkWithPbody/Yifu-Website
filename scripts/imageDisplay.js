@@ -1,7 +1,7 @@
 import {
     printLog,
     fileHandle,
-} from "/scripts/global.js";
+} from "./global.js";
 
 // 
 
@@ -77,9 +77,6 @@ const imageLoad = function (container) {
     img.style = `width: 100%;`;
 
     const a = document.createElement(`a`);
-    // a.target = `_blank`;
-    // a.href = file.path;
-    // a.href = `javascript:void(0);`;
     a.addEventListener(`click`, function () { modalLoad(event, a, img, file) });
     a.appendChild(img);
 

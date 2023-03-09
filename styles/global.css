@@ -1,35 +1,35 @@
 @font-face {
     font-family: OpenDyslexicMono;
-    src: url("/assets/fonts/OpenDyslexic2/OpenDyslexicMono-Regular.otf");
+    src: url("../assets/fonts/OpenDyslexic2/OpenDyslexicMono-Regular.otf");
 }
 
 @font-face {
     font-family: OpenDyslexic;
-    src: url("/assets/fonts/OpenDyslexic2/OpenDyslexic-Regular.otf");
+    src: url("../assets/fonts/OpenDyslexic2/OpenDyslexic-Regular.otf");
 }
 
 @font-face {
     font-family: OpenDyslexic;
-    src: url("/assets/fonts/OpenDyslexic2/OpenDyslexic-Bold.otf");
+    src: url("../assets/fonts/OpenDyslexic2/OpenDyslexic-Bold.otf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: OpenDyslexic;
-    src: url("/assets/fonts/OpenDyslexic2/OpenDyslexic-Italic.otf");
+    src: url("../assets/fonts/OpenDyslexic2/OpenDyslexic-Italic.otf");
     font-style: italic;
 }
 
 @font-face {
     font-family: OpenDyslexic;
-    src: url("/assets/fonts/OpenDyslexic2/OpenDyslexic-BoldItalic.otf");
+    src: url("../assets/fonts/OpenDyslexic2/OpenDyslexic-BoldItalic.otf");
     font-style: italic;
     font-weight: bold;
 }
 
 @font-face {
     font-family: FiraCode;
-    src: url("/assets/fonts/FiraCode/FiraCode-VariableFont_wght.ttf");
+    src: url("../assets/fonts/FiraCode/FiraCode-VariableFont_wght.ttf");
 }
 
 /* https://www.w3.org/TR/predefined-counter-styles/#chinese-styles */
@@ -156,7 +156,6 @@ transform: translate(0, -50%); */
 text-align-last: justify; */
 
 :root {
-    --hheh: hsl(28, 80%, 90%, 60%);
     --main-hue: 50;
 
     --color-main: hsl(var(--main-hue), 50%, 60%, 100%);
@@ -328,9 +327,9 @@ main {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: var(--width-max);
-    max-width: 100%;
-    min-height: calc(100% - var(--height-nav));
-    padding: var(--height-nav);
+    max-width: 90%;
+    min-height: calc(100% - 2 * var(--height-nav));
+    padding: var(--height-nav) 0px;
 
     z-index: 1;
 }
@@ -353,8 +352,20 @@ main {
     margin: 0px 0px 16px;
 }
 
-.image,
-.image-display {
+/* .image-display:hover,
+.image-displace-display:hover {
+    transform: scale(1.6);
+} */
+
+.image a,
+.image-display a,
+.image-displace canvas {
+    display: block;
+    line-height: 0;
+}
+
+.image a,
+.image-display a {
     /* cursor: cell; */
     /* cursor: help; */
     /* cursor: not-allowed; */
@@ -366,18 +377,6 @@ main {
 .image-displace {
     /* cursor: all-scroll; */
     cursor: crosshair;
-}
-
-/* .image-display:hover,
-.image-displace-display:hover {
-    transform: scale(1.6);
-} */
-
-.image a,
-.image-display a,
-.image-displace canvas {
-    display: block;
-    line-height: 0;
 }
 
 .image-display img,
@@ -420,51 +419,48 @@ footer {
     }
 }
 
-h1,
-h3,
-h5 {
+h1 {
     color: var(--color-contrast);
-}
-
-h2,
-h4,
-h6 {
-    color: var(--color-main);
-}
-
-h1,
-h2 {
-    font-size: 200%;
+    font-size: 250%;
     margin: 24px 0px 16px;
     text-align: center;
-    text-shadow: 2px 2px 0px var(--color-bg-main), 4px 4px 2px var(--color-bg-contrast);
+    text-shadow: 0.5px 0.5px 0px var(--color-off), 1.0px 1.0px 0px var(--color-off), 1.5px 1.5px 0px var(--color-off), 2.0px 2.0px 0px var(--color-off), 2.5px 2.5px 0px var(--color-off), 3.0px 3.0px 0px var(--color-off), 4.0px 4.0px 0px var(--color-bg-contrast);
 }
 
-h3,
-h4 {
+h2 {
+    color: var(--color-contrast);
+    font-size: 100%;
+    margin: 20px 0px 12px;
+    text-align: center;
+}
+
+h3 {
+    color: var(--color-main);
     font-size: 150%;
     margin: 20px 0px 12px;
     text-align: center;
-    text-shadow: 1px 1px 0px var(--color-bg-main), 2px 2px 2px var(--color-bg-contrast);
+    text-shadow: 1px 1px 0px var(--color-off), 2px 2px 2px var(--color-bg-contrast);
 }
 
-h5,
-h6 {
+h4 {
+    color: var(--color-contrast);
+    font-size: 150%;
+    margin: 20px 0px 12px;
+    text-align: center;
+    text-shadow: 1px 1px 0px var(--color-off), 2px 2px 2px var(--color-bg-contrast);
+}
+
+h5 {
+    color: var(--color-main);
     font-size: 100%;
     margin: 16px 0px 8px;
 }
 
-/* h1 {
-    text-shadow: 2px 2px 0px var(--color-bg-main), 4px 4px 2px var(--color-bg-contrast);
+h6 {
+    color: var(--color-contrast);
+    font-size: 100%;
+    margin: 16px 0px 8px;
 }
-
-h2 {
-    text-shadow: 2px 2px 2px var(--color-bg-contrast);
-}
-
-h3 {}
-
-h4 {} */
 
 p,
 ol,
@@ -519,6 +515,13 @@ table a:visited {
     color: var(--color-contrast);
 }
 
+th {
+    background: transparent;
+    background: radial-gradient(circle, var(--color-bg-contrast) 0%, var(--color-bg-dark) 100%);
+    height: 36px;
+    padding: 0px 24px;
+}
+
 tr {
     height: 25px;
 }
@@ -532,6 +535,11 @@ td {
 td input[type="checkbox"] {
     display: block;
     margin: 0 auto;
+}
+
+.table-empty {
+    background: transparent;
+    padding: 0px;
 }
 
 ol {

@@ -1,4 +1,6 @@
-/* <script src="/scripts/black-design-marzipano-by-3dground.js"></script> */
+// <script type="module" src="../../../scripts/black-design-marzipano-by-3dground.js"></script>
+
+const sitePrefix = `/~zishuo.li/`;
 
 let blackDesign = document.createElement("style");
 blackDesign.innerHTML = `
@@ -126,40 +128,40 @@ body.multiple-scenes.mobile #titleBar {
 }
 `;
 
-
 let blackDesignIcon = document.createElement("link");
 blackDesignIcon.rel = "shortcut icon";
 blackDesignIcon.type = "image/x-icon";
 blackDesignIcon.sizes = "16x16 32x32 48x48 64x64";
-blackDesignIcon.href = "/assets/icons/pano/pano.svg";
+blackDesignIcon.href = sitePrefix + "assets/icons/pano/pano.svg";
 
+const favicon = document.createElement("link");
+favicon.rel = "icon";
+favicon.href = sitePrefix + "assets/icons/favicon/favicon.ico";
 
 document.head.appendChild(blackDesign);
 document.head.appendChild(blackDesignIcon);
+document.head.appendChild(favicon);
 
+// document.querySelector("#sceneListToggle img.icon off").src = sitePrefix + "assets/icons/pano/menu.svg";
+// document.querySelector("#sceneListToggle img.icon on").src = sitePrefix + "assets/icons/pano/close.svg";
 
-// document.querySelector("#sceneListToggle img.icon off").src = "/assets/icons/pano/menu.svg";
-// document.querySelector("#sceneListToggle img.icon on").src = "/assets/icons/pano/close.svg";
+if (document.querySelector("#sceneList ul.scenes")) { document.querySelector("#sceneList ul.scenes").innerHTML = ""; };
 
+// document.title = APP_DATA.name;
 
+// let el = document.querySelector('#sceneList ul');
 
-document.querySelector("#sceneList ul.scenes").innerHTML = "";
+// APP_DATA.scenes.forEach(i => {
+//     let a = document.createElement('a');
+//     let li = document.createElement('li');
 
-document.title = APP_DATA.name;
+//     a.classList.add('scene');
+//     a.setAttribute('data-id', i.id);
+//     a.setAttribute('href', 'javascript:void(0)');
 
-let el = document.querySelector('#sceneList ul');
+//     li.classList.add('text');
+//     li.innerHTML = i.name;
 
-APP_DATA.scenes.forEach(i => {
-    let a = document.createElement('a');
-    let li = document.createElement('li');
-
-    a.classList.add('scene');
-    a.setAttribute('data-id', i.id);
-    a.setAttribute('href', 'javascript:void(0)');
-
-    li.classList.add('text');
-    li.innerHTML = i.name;
-
-    a.appendChild(li);
-    el.appendChild(a);
-});
+//     a.appendChild(li);
+//     el.appendChild(a);
+// });

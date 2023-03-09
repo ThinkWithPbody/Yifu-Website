@@ -1,17 +1,18 @@
 {/* <script type=`module` src=`/scripts/displacement-depth.js`></script> */ }
 
 import {
+    sitePrefix,
     printLog,
     debounce,
     throttle,
     fileHandle,
     HSLAStringToHSLA,
     HSLToHex,
-} from "/scripts/global.js";
+} from "./global.js";
 
 (function () {
     let pixijs = document.createElement(`script`);
-    pixijs.src = `/scripts/pixi.js`;
+    pixijs.src = sitePrefix + `scripts/pixi.js`;
     pixijs.defer = true;
     document.head.appendChild(pixijs);
     pixijs.onload = function () {
@@ -21,7 +22,7 @@ import {
 
         const imageDisplace = function (container) {
             let imageSize = [2560, 1440];
-            const scaleFactor = [50, 50];
+            const scaleFactor = [25, 25];
 
             let canvasSize = [0, 0, imageSize[0] / imageSize[1]];
             function updateCanvasSize() {
