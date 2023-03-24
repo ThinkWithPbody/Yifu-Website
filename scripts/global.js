@@ -1,5 +1,5 @@
 // Global Exports
-const sitePrefix = `/`;
+const sitePrefix = `/Yifu-Website/`;
 // const sitePrefix = `/~zishuo.li/`;
 
 function printLog() {

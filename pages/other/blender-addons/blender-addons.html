@@ -34,7 +34,7 @@
             <h2></h2>
         </div>
         <div bp="grid">
-            <div bp="7@lg">
+            <div bp="5@lg">
                 <h3>What?</h3>
                 <p>I keep track of my favourite Blender addons and parameters for note keeping and easier migration.
                     Twist: I innitially wrote this long list in <em>Markdown</em>. It's not a problem, really, except
@@ -44,6 +44,37 @@
                 <p>For this project, filling everything out by hand wouldn't have taken much longer than writing the
                     script, but it's more fun which means I'll actually get it done. But this is just the beginning...
                 </p>
+                <h3>How?</h3>
+                <h5>JavaScript</h5>
+                <pre data-src="blender-addons.js" class="line-numbers match-braces" data-range="1,"
+                    data-line="25-30"></pre>
+                <h5>Outputs</h5>
+                <script type="text/plain" class="language-markup">
+                    <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td>Refine tracking solution</td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td><a href="https://www.sheepit-renderfarm.com/home">SheepIt</a></td>
+                    <td>\Blender\sheepit-autoupdate.exe -request-time "24:00-06:00,11:00-16:00"</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox"></td>
+                    <td><a href="https://github.com/sketchfab/blender-plugin">Sketchfab</a></td>
+                    <td>\Blender\Addon\Sketchfab\</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td><a href="https://blendermarket.com/pickup/ds5ax7">Powersave</a></td>
+                    <td>\Blender\Assets\project\ - %Y-%m-%dT%H_%M_%S%z - Traffic</td>
+                    </tr></script>
+                <h5>Stylesheet</h5>
+                <pre data-src="../../../styles/global.css" class="line-numbers match-braces" data-range="506,544"
+                    data-line-offset="506" data-line="509-510,537-538"></pre>
+            </div>
+            <div bp="7@lg">
                 <h3>Result</h3>
                 <h5>External Addons</h5>
                 <table>
@@ -143,6 +174,11 @@
                     </tr>
                     <tr>
                         <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/71o01s">Realtime Materials For Blender<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
                         <td><a href="https://blendermarket.com/pickup/4wg34g">Sanctus Library<a></td>
                         <td></td>
                     </tr>
@@ -159,6 +195,16 @@
                     <tr>
                         <td><input type="checkbox" checked></td>
                         <td><a href="https://app.gumroad.com/d/5323cff8aea5c5b0db98044863d1d14c">Image 2 Mesh<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://github.com/EatTheFuture/camera_shakify">Camera Shakify<a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="https://blendermarket.com/pickup/71o01s">Alt Tab Camera<a></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -624,37 +670,6 @@
                     </tr>
                 </table>
                 <button onclick="saveTable()">Save</button>
-            </div>
-            <div bp="5@lg">
-                <h3>How?</h3>
-                <h5>JavaScript</h5>
-                <pre data-src="blender-addons.js" class="line-numbers match-braces" data-range="1,"
-                    data-line="25-30"></pre>
-                <h5>Outputs</h5>
-                <script type="text/plain" class="language-markup">
-                    <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td>Refine tracking solution</td>
-                    <td></td>
-                    </tr>
-                    <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td><a href="https://www.sheepit-renderfarm.com/home">SheepIt</a></td>
-                    <td>\Blender\sheepit-autoupdate.exe -request-time "24:00-06:00,11:00-16:00"</td>
-                    </tr>
-                    <tr>
-                    <td><input type="checkbox"></td>
-                    <td><a href="https://github.com/sketchfab/blender-plugin">Sketchfab</a></td>
-                    <td>\Blender\Addon\Sketchfab\</td>
-                    </tr>
-                    <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td><a href="https://blendermarket.com/pickup/ds5ax7">Powersave</a></td>
-                    <td>\Blender\Assets\project\ - %Y-%m-%dT%H_%M_%S%z - Traffic</td>
-                    </tr></script>
-                <h5>Stylesheet</h5>
-                <pre data-src="../../../styles/global.css" class="line-numbers match-braces" data-range="506,544"
-                    data-line-offset="506" data-line="509-510,537-538"></pre>
             </div>
         </div>
     </main>
