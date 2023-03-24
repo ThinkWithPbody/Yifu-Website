@@ -3,7 +3,7 @@ const sitePrefix = `/Yifu-Website/`;
 // const sitePrefix = `/~zishuo.li/`;
 
 function printLog() {
-    return false;
+    return true;
 };
 
 function debounce(func, timeout = 100) {
