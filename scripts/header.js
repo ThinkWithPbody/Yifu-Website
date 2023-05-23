@@ -41,7 +41,7 @@ class LoadHeader extends HTMLElement {
                         <div class="dropdown-header" id="dropdown3">
                             <a>Other</a>
                             <div class="dropdown-content" id="content3">
-                            <a href="">Depth Map Displacement On The Web</a>
+                            <a href="${sitePrefix}pages/other/depth-displacement/depth-displacement.html">Depth Map Displacement On The Web</a>
                             <a href="${sitePrefix}pages/other/laser-cut/laser-cut.html">Laser Cut Projects</a>
                             <a href="${sitePrefix}pages/other/blender-addons/blender-addons.html">Automate the boring stuff... with JavaScript</a>
                             <a href="${sitePrefix}pages/other/BibWord/BibWord.html">Intro To BibWord</a>
