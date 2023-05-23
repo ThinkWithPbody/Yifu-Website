@@ -255,7 +255,8 @@ function HSLToHex(h, s, l) {
     };
 
     const loading = {};
-    loading.slide = false;
+    // loading.slide = false;
+    loading.slide = true;
     loading.animation = 500;
     loading.in = 250;
     loading.out = 0;
